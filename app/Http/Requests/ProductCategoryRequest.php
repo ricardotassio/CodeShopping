@@ -13,7 +13,7 @@ class ProductCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,9 +23,8 @@ class ProductCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        /* TESTANDO O CHERRY*/
         return [
-            'categories' => 'required|exists:categories.id',
+            'categories' => 'required|exists:categories,id',
             
         ];
     }
